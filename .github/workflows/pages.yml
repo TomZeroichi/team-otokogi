@@ -33,6 +33,7 @@ jobs:
           p = Path('dist/index.html')
           s = p.read_text(encoding='utf-8')
           s = s.replace('/static/', './')
+          s = s.replace('v=0201', 'v=0300')
           s = s.replace('</head>', '<link rel="stylesheet" href="./preview.css">\n<script src="./preview.js"></script>\n</head>')
           p.write_text(s, encoding='utf-8')
           p = Path('dist/style.css')
