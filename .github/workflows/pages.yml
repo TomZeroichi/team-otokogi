@@ -29,7 +29,7 @@ jobs:
           cp index.html dist/index.html
           cp sw.js dist/sw.js
           cp static/* dist/static/
-          cp pages/shared-api.js pages/brand-concept.js pages/pwa.js pages/manifest.webmanifest dist/pages/
+          cp pages/shared-api.js pages/brand-concept.js pages/pwa.js pages/manifest.webmanifest pages/wafu-layout.css dist/pages/
           touch dist/.nojekyll
 
       - name: Configure Pages
