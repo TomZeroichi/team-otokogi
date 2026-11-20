@@ -28,7 +28,7 @@
     if(title&&!title.dataset.kyokiLogo){
       title.dataset.kyokiLogo='1';
       title.style.display='flex';title.style.alignItems='center';title.style.minWidth='0';
-      title.innerHTML='<img class="kyoki-header-mark" src="'+LOGO+'" alt="TEAM 狭気"><div class="kyoki-header-copy"><b>TEAM 狭気</b><small>TEAM OTOKOGI</small></div>';
+      title.innerHTML='<img class="kyoki-header-mark" src="'+LOGO+'" alt="TEAM 狭気"><div class="kyoki-header-copy"><b>狭気</b><small>TEAM OTOKOGI</small></div>';
     }
   }
   document.addEventListener('DOMContentLoaded',()=>{addStyle();splash();apply();});
