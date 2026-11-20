@@ -1,0 +1,57 @@
+name: Publish TEAM狭気 preview
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: team-otokogi-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Assemble static preview
+        run: |
+          mkdir -p dist
+          cp static/* dist/
+          cp pages/preview.js pages/preview.css dist/
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('dist/index.html')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('/static/', './')
+          s = s.replace('</head>', '<link rel="stylesheet" href="./preview.css">\n<script src="./preview.js"></script>\n</head>')
+          p.write_text(s, encoding='utf-8')
+          p = Path('dist/style.css')
+          p.write_text(p.read_text(encoding='utf-8').replace('/static/', './'), encoding='utf-8')
+          p = Path('dist/manifest.webmanifest')
+          p.write_text(p.read_text(encoding='utf-8').replace('"/static/', '"./').replace('"start_url":"/"', '"start_url":"./"').replace('"scope":"/"', '"scope":"./"'), encoding='utf-8')
+          Path('dist/.nojekyll').write_text('')
+          PY
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
