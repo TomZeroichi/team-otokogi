@@ -1,4 +1,4 @@
-name: Publish TEAM狭気 preview
+name: Deploy TEAM 狭気
 on:
   push:
     branches: [main]
@@ -23,25 +23,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Assemble static preview
+      - name: Assemble production app
         run: |
-          mkdir -p dist
-          cp static/* dist/
-          cp pages/preview.js pages/preview.css dist/
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('dist/index.html')
-          s = p.read_text(encoding='utf-8')
-          s = s.replace('/static/', './')
-          s = s.replace('v=0201', 'v=0300')
-          s = s.replace('</head>', '<link rel="stylesheet" href="./preview.css">\n<script src="./preview.js"></script>\n</head>')
-          p.write_text(s, encoding='utf-8')
-          p = Path('dist/style.css')
-          p.write_text(p.read_text(encoding='utf-8').replace('/static/', './'), encoding='utf-8')
-          p = Path('dist/manifest.webmanifest')
-          p.write_text(p.read_text(encoding='utf-8').replace('"/static/', '"./').replace('"start_url":"/"', '"start_url":"./"').replace('"scope":"/"', '"scope":"./"'), encoding='utf-8')
-          Path('dist/.nojekyll').write_text('')
-          PY
+          mkdir -p dist/static dist/pages
+          cp index.html dist/index.html
+          cp sw.js dist/sw.js
+          cp static/* dist/static/
+          cp pages/shared-api.js pages/brand-concept.js pages/pwa.js pages/manifest.webmanifest dist/pages/
+          touch dist/.nojekyll
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
