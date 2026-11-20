@@ -1,7 +1,7 @@
 /* TEAM 狭気：承認済みロゴと起動時コンセプト */
 'use strict';
 (function(){
-  const LOGO='./static/kyoki-logo-hi-512.webp?v=1';
+  const LOGO='./static/kyoki-logo-hi-192.png?v=2';
   const copy='勝っても、負けても<br>仲間のために、胸を張って奢る<br><br><span>弱きを助け、強きを挫く</span><br><strong>義理と人情でつながる、TEAM 狭気🔥</strong>';
   function addStyle(){
     if(document.getElementById('kyoki-brand-style'))return;
