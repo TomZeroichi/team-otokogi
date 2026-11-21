@@ -17,14 +17,14 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{
 .menu-panel button{color:var(--cream);width:100%;background:transparent;border:0;padding:13px;text-align:left;border-bottom:1px solid #ffffff14}
 .menu-panel button:last-child{border:0}
 .screen{padding:0 15px calc(var(--bottom) + env(safe-area-inset-bottom) + 25px);min-height:calc(100dvh - 79px);position:relative}
-.screen:after{content:"";pointer-events:none;position:absolute;bottom:calc(var(--bottom) + env(safe-area-inset-bottom));left:-2px;right:-2px;height:110px;background:url('/static/waves.svg') repeat-x bottom / 90px 43px;opacity:.19;z-index:0}
+.screen:after{content:"";pointer-events:none;position:absolute;bottom:calc(var(--bottom) + env(safe-area-inset-bottom));left:-2px;right:-2px;height:110px;background:url('./waves.svg') repeat-x bottom / 90px 43px;opacity:.19;z-index:0}
 .screen>*{position:relative;z-index:1}
 .page-title{text-align:center;font-size:21px;letter-spacing:3px;font-family:"Noto Serif CJK JP",serif;font-weight:800;margin:8px 0 13px;color:var(--white)}
 .subheading{color:var(--gold);font-family:"Noto Serif CJK JP",serif;font-weight:900;letter-spacing:1px;font-size:16px;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
 .subheading:before{content:"✥";font-size:17px}.subheading small{margin-left:auto;font-family:system-ui,sans-serif;color:#af9871;font-size:11px;font-weight:500;letter-spacing:0}
 .gold-line{border:0;border-top:1px solid #ad824a55;margin:15px 0}
 .muted{color:#b4ac97;line-height:1.7;font-size:12px}.gold{color:var(--gold)}.text-center{text-align:center}
-.hero{height:220px;background:linear-gradient(180deg,transparent 0%,#08101408 65%,#071014 100%),url('/static/hero.svg') center 29% / cover no-repeat;position:relative;margin:0 -15px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;padding:0 17px 12px}
+.hero{height:220px;background:linear-gradient(180deg,transparent 0%,#08101408 65%,#071014 100%),url('./hero.svg') center 29% / cover no-repeat;position:relative;margin:0 -15px;display:flex;align-items:center;justify-content:flex-end;flex-direction:column;padding:0 17px 12px}
 .hero-rule-title{background:#0a1317e8;border:1px solid var(--gold2);color:#f1e0b7;border-radius:60px;padding:7px 20px;font-size:14px;letter-spacing:1px;box-shadow:0 4px 15px #0009}
 .hero-winner{min-height:61px;display:flex;justify-content:center;align-items:center;gap:12px;font-family:"Noto Serif CJK JP",serif;font-weight:900;font-size:28px;letter-spacing:3px;color:#fff5de;text-shadow:0 2px 8px #000}
 .hero-winner .crown{color:var(--gold);font-size:32px}
@@ -109,7 +109,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{
 .nav-button{background:transparent;border:0;color:#b8a37c;font-size:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;min-width:0;padding:4px 0;white-space:nowrap}
 .nav-button svg{height:22px;width:22px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.nav-button.active{color:#ebbd60;font-weight:900}.nav-button.active svg{stroke-width:2.35}
 .toast{position:fixed;z-index:99;bottom:calc(94px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);max-width:min(370px,90vw);background:#f1d69b;color:#2b2115;border:1px solid #916a32;border-radius:12px;padding:12px 15px;font-weight:800;font-size:12px;box-shadow:0 6px 29px #0009}
-.auth-screen{min-height:100dvh;padding:45px 19px 45px;background:radial-gradient(circle at 50% 9%,#512821aa,transparent 33%),url('/static/waves.svg') bottom / 100px auto repeat-x,var(--night)}
+.auth-screen{min-height:100dvh;padding:45px 19px 45px;background:radial-gradient(circle at 50% 9%,#512821aa,transparent 33%),url('./waves.svg') bottom / 100px auto repeat-x,var(--night)}
 .auth-hero{text-align:center;margin-bottom:28px}.auth-hero .crest-icon{margin:0 auto 14px;width:97px;height:97px;border:2px solid #d4a45b;border-radius:50%;display:grid;place-items:center;font-family:"Noto Serif CJK JP",serif;font-weight:900;font-size:42px;color:#f2d28a;background:#10181b;box-shadow:inset 0 0 0 5px #0f171c,inset 0 0 0 7px #8d6032}
 .auth-hero .brand-title{font-size:35px}.auth-hero p{font-size:12px;color:#d5bb8c;margin-top:14px}
 .auth-card{padding:20px 17px;border:2px solid #bd9456;background:linear-gradient(140deg,#fdf0d5,#e7d2aa);border-radius:15px;color:#211e1a}.auth-card h2{margin:0 0 7px;font-size:20px;font-family:"Noto Serif CJK JP",serif}.auth-card p{font-size:12px;color:#675b48;line-height:1.7;margin:0 0 15px}
