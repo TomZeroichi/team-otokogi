@@ -53,7 +53,7 @@ function recordPage(){const b=state.boot,g=b.group,admin=b.me.role==='admin',mod
  <div class="section-num"><i>1</i>ルール</div>${ruleCards('record')}<div class="record-rule-copy">${ruleCopy}</div>
  <div class="record-meta"><div class="field"><label for="event_date">開催日</label><input name="event_date" id="event_date" type="date" value="${today()}" required></div><div class="field"><label for="place">場所・お店</label><input id="place" name="place" maxlength="80" placeholder="例：名駅ランチ"></div></div>
  <div class="section-num"><i>2</i>結果</div>
- <div class="inline-select"><span id="payer-label">${payerLabel}</span><select id="payer_id" name="payer_id" aria-label="${payerLabel}" required>${selectOptions(first)}</select></div>
+ <div class="result-field result-payer"><label for="payer_id" id="payer-label">${payerLabel}</label><select id="payer_id" name="payer_id" aria-label="${payerLabel}" required>${selectOptions(first)}</select></div>
  <div class="recipient-block"><div class="field-label" id="recipient-label">${recipientsLabel}</div><div class="participants">${b.members.map(m=>`<label class="person-chip"><input type="checkbox" name="recipients" value="${m.id}" ${m.id!==first?'checked':''}>${esc(m.nickname)}</label>`).join('')}</div></div>
  <div class="section-num"><i>3</i>会計金額</div><div class="field price-row"><span>¥</span><input type="number" name="amount" id="amount" min="1" max="100000000" placeholder="1,200" inputmode="numeric" required aria-label="会計金額（円）"></div>
  <div class="section-num"><i>4</i>メモ（任意）</div><div class="field record-note"><textarea id="note" name="note" maxlength="500" placeholder="例：今日のランチはカレー！"></textarea></div>
