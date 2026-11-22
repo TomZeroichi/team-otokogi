@@ -3,7 +3,7 @@
   "short_name": "TEAM 狭気",
   "description": "義理と人情でつながる男気じゃんけん戦績帳",
   "lang": "ja",
-  "start_url": "../?pwa=brand-hd-v6",
+  "start_url": "../?pwa=brand-hd-v7",
   "scope": "../",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui"],
