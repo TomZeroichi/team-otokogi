@@ -16,7 +16,7 @@ const icon=(k)=>{const icons={home:'<path d="m3 10 9-7 9 7v10H3V10Z"/><path d="M
 function toast(s){document.querySelector('.toast')?.remove();const el=document.createElement('div');el.className='toast';el.textContent=s;document.body.appendChild(el);clearTimeout(state.toastTimer);state.toastTimer=setTimeout(()=>el.remove(),3300);}
 function copyText(s){if(navigator.clipboard?.writeText)return navigator.clipboard.writeText(s).catch(()=>legacyCopy(s));return legacyCopy(s);}
 function legacyCopy(s){const el=document.createElement('textarea');el.value=s;el.style.cssText='position:fixed;opacity:0';document.body.appendChild(el);el.select();document.execCommand('copy');el.remove();}
-function lineShareUrl(text,url){return 'https://line.me/R/msg/text/?'+encodeURIComponent(url?`${text}\n${url}`:text);}
+function lineShareUrl(text,url){const sharedUrl=url&&url.includes('invite=')?url+(url.includes('?')?'&':'?')+'share=kyoki-logo-v3':url;return 'https://line.me/R/msg/text/?'+encodeURIComponent(sharedUrl?`${text}\n${sharedUrl}`:text);}
 function shareToLine(text,url){location.assign(lineShareUrl(text,url));return true;}
 async function api(path,method='GET',body){let response;try{response=await fetch(path,{method,headers:body?{'Content-Type':'application/json'}:{},credentials:'same-origin',body:body?JSON.stringify(body):undefined});}catch{throw Error('サーバーに接続できません。通信環境を確認してください。');}
  let json;try{json=await response.json();}catch{json={};}if(!response.ok){let message=Array.isArray(json.detail)?json.detail.map(x=>x.msg).join('・'):json.detail;throw Error(message||`通信エラー（${response.status}）`);}return json;}
