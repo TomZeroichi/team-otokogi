@@ -95,7 +95,7 @@ APP.addEventListener('click',async event=>{const target=event.target;const go=ta
  const mode=target.closest('[data-mode]');if(mode){if(mode.disabled)return;try{await api('/api/choose-mode','POST',{mode:mode.dataset.mode});await refresh();toast('次回のルールを設定しました！');}catch(e){toast(e.message);}return;}
  const del=target.closest('[data-delete]');if(del){if(!confirm('この開催記録を削除しますか？ 削除は元に戻せません。'))return;try{await api('/api/rounds/'+Number(del.dataset.delete),'DELETE');state.historyDetails=null;await refresh();toast('開催記録を削除しました。');}catch(e){toast(e.message);}return;}
  if(target.closest('#copy-link')){const invite=location.origin+location.pathname+'?invite='+encodeURIComponent(state.boot.group.invite);try{await copyText(invite);toast('招待URLをコピーしました');}catch{toast('コピーできませんでした');}return;}
- const share=target.closest('[data-share-result]');if(share){const round=state.boot.rounds.find(r=>String(r.id)===share.dataset.shareResult);if(!round)return;await shareToLine(lunchShareText(round),location.origin+location.pathname);return;}
+ const share=target.closest('[data-share-result]');if(share){const round=state.boot.rounds.find(r=>String(r.id)===share.dataset.shareResult);if(!round)return;await shareToLine(lunchShareText(round),location.origin+location.pathname+'?share=kyoki-logo-v2');return;}
  if(target.closest('#share-line')){const invite=location.origin+location.pathname+'?invite='+encodeURIComponent(state.boot.group.invite);await shareToLine('TEAM狭気の戦績帳に参加しよう！',invite);return;}
  if(target.closest('#logout')){try{await api('/api/logout','POST');state.boot=null;state.menu=false;render();toast('ログアウトしました');}catch(e){toast(e.message);}return;}
  if(state.menu){state.menu=false;render();}
