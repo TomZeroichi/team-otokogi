@@ -11,7 +11,7 @@ html,body{height:100%;overflow:hidden;background:#05090b}
 .kyoki-header-copy{margin-left:0!important;text-align:left!important;white-space:nowrap}
 .kyoki-header-copy b{font-family:"Yu Mincho","Hiragino Mincho ProN",serif!important;font-size:20px!important;letter-spacing:.04em!important;color:#f5d88d!important;text-shadow:0 1px 0 #7e4c1a,0 0 11px rgba(226,165,62,.42)!important}
 .kyoki-header-copy b:before{content:"TEAM ";font-family:Georgia,serif;font-size:12px;font-style:italic;letter-spacing:0}
-.kyoki-header-copy small{font-size:7px!important;letter-spacing:.32em!important;color:#d9b96e!important;margin-top:3px!important}
+.kyoki-header-copy small{display:block!important;width:100%!important;text-align:center!important;font-size:7px!important;letter-spacing:.32em!important;color:#d9b96e!important;margin-top:3px!important}
 .header-action{top:12px!important;color:#f3cf79!important;z-index:50!important;touch-action:manipulation;pointer-events:auto!important}.menu-panel{z-index:100!important;pointer-events:auto!important}
 .screen{height:calc(100dvh - var(--kyoki-head) - var(--kyoki-nav) - env(safe-area-inset-bottom));min-height:0!important;padding:5px 13px 7px!important;overflow:hidden!important;isolation:isolate;background:linear-gradient(180deg,rgba(4,12,15,.08),rgba(4,12,15,.58)),url('../static/waves.svg') center bottom/98px 44px repeat-x}
 .screen:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(197,146,55,.16),transparent 12%,transparent 88%,rgba(197,146,55,.16)),repeating-linear-gradient(-25deg,transparent 0 30px,rgba(228,181,89,.025) 31px 32px);z-index:-1}
