@@ -1,6 +1,7 @@
 /* TEAM狭気 v0.2: 和風UI + 既存の共有API。外部依存なし */
 'use strict';
 const APP=document.getElementById('app');
+new MutationObserver(()=>document.documentElement.classList.toggle('kyoki-auth-active',!!APP.querySelector('.auth-screen'))).observe(APP,{childList:true,subtree:true});
 const state={boot:null,tab:'home',rankBy:'paid',analysisBy:'summary',historyDetails:null,menu:false,authMode:'join',loading:false,toastTimer:null,invite:new URLSearchParams(location.search).get('invite')||'',theme:localStorage.getItem('kyoki_theme')||'wafu',fontSize:localStorage.getItem('kyoki_font_size')||'normal',justRecordedId:null};
 function applyDisplayPrefs(){document.documentElement.dataset.theme=state.theme;document.documentElement.dataset.fontSize=state.fontSize;}
 applyDisplayPrefs();
@@ -105,6 +106,7 @@ function editableTarget(el){return el instanceof HTMLElement&&(el.matches('input
 function keepEditableVisible(el){document.documentElement.classList.add('kyoki-editing');setTimeout(()=>{try{el.scrollIntoView({block:'center',inline:'nearest',behavior:'smooth'});}catch{}},180);}
 document.addEventListener('focusin',event=>{if(editableTarget(event.target))keepEditableVisible(event.target);});
 document.addEventListener('focusout',()=>setTimeout(()=>{if(!editableTarget(document.activeElement))document.documentElement.classList.remove('kyoki-editing');},180));
+APP.addEventListener('touchstart',event=>{const field=event.target.closest('input:not([type="checkbox"]):not([type="radio"]),textarea,select');if(field&&document.activeElement!==field){try{field.focus({preventScroll:true});}catch{field.focus();}}},{passive:true});
 APP.addEventListener('submit',async e=>{if(!['auth-form','round-form'].includes(e.target.id))return;e.preventDefault();if(state.loading)return;const form=e.target;state.loading=true;const submit=form.querySelector('button[type=submit]');if(submit)submit.disabled=true;try{if(form.id==='auth-form')await submitAuth(form);else await submitRound(form);}catch(err){toast(err.message);if(submit)submit.disabled=false;}finally{state.loading=false;}});
 async function silentSync(){if(!state.boot||state.loading||state.tab==='record'||state.menu||document.visibilityState==='hidden')return;try{const fresh=await api('/api/bootstrap');if(JSON.stringify(fresh)!==JSON.stringify(state.boot)){state.boot=fresh;render();}}catch{/* ネットワーク一時エラーでは表示済みデータを残す */}}
 setInterval(silentSync,20000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')silentSync();});

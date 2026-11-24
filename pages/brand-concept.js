@@ -15,7 +15,7 @@
     const el=document.createElement('section');
     el.id='kyoki-splash'; el.setAttribute('aria-label','TEAM 狭気 コンセプト');
     el.innerHTML='<div class="kyoki-splash-inner"><img class="kyoki-splash-logo" src="'+LOGO+'" alt="TEAM 狭気"><div class="kyoki-splash-copy">'+COPY+'</div></div>';
-    el.style.cssText='position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 50% 13%,#55221f 0,transparent 34%),linear-gradient(145deg,#050708,#111719);text-align:center;opacity:1;transition:opacity .55s ease';
+    el.style.cssText='position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 50% 13%,#55221f 0,transparent 34%),linear-gradient(145deg,#050708,#111719);text-align:center;opacity:1;transition:opacity .55s ease;pointer-events:none';
     el.firstElementChild.style.cssText='max-width:360px'; document.body.appendChild(el);
     setTimeout(()=>{el.style.opacity='0';setTimeout(()=>el.remove(),600)},5000);
   }
