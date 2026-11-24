@@ -1,1 +1,1 @@
-'use strict';if('serviceWorker'in navigator){let reloaded=false;window.addEventListener('load',()=>{navigator.serviceWorker.addEventListener('controllerchange',()=>{if(!reloaded){reloaded=true;location.reload();}});navigator.serviceWorker.register('./sw.js?v=10',{scope:'./',updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});});}
+'use strict';if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js?v=11',{scope:'./',updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});});}
