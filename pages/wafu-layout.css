@@ -69,3 +69,22 @@ html[data-theme="contrast"] #app{background:radial-gradient(circle at 50% 18%,rg
 /* Readability pass: avoid pale lettering and blurred outlines in personal themes. */
 html[data-theme="light"] .kyoki-header-copy b{color:#5d3510!important;text-shadow:none!important;font-weight:900!important}html[data-theme="light"] .kyoki-header-copy small{color:#513418!important;font-weight:900!important}html[data-theme="light"] .stats-title,html[data-theme="light"] .rule-state,html[data-theme="light"] .empty,html[data-theme="light"] .history-copy small,html[data-theme="light"] .gratitude-meter small{color:#4a311b!important;text-shadow:none!important;font-weight:800!important}html[data-theme="light"] .empty{background:rgba(255,250,237,.74)!important;border-color:#76542c!important}html[data-theme="light"] .gratitude-meter{background:linear-gradient(105deg,#6a2928,#253135)!important;color:#fff7db!important;border-color:#b98c43!important}html[data-theme="light"] .gratitude-meter b{color:#ffd77f!important}html[data-theme="light"] .gratitude-meter small{color:#fff0c1!important}
 html[data-theme="contrast"] .kyoki-header-copy b{color:#111!important;text-shadow:none!important;font-weight:900!important}html[data-theme="contrast"] .kyoki-header-copy small{color:#222!important;font-weight:900!important}html[data-theme="contrast"] .rule-card strong,html[data-theme="contrast"] .rule-card small{color:#111!important;text-shadow:none!important;filter:none!important;font-weight:900!important}html[data-theme="contrast"] .rule-card .rule-symbol{filter:none!important;text-shadow:none!important}html[data-theme="contrast"] .stats-title,html[data-theme="contrast"] .rule-state,html[data-theme="contrast"] .empty,html[data-theme="contrast"] .history-copy small,html[data-theme="contrast"] .gratitude-meter small{color:#111!important;text-shadow:none!important;font-weight:800!important}html[data-theme="contrast"] .empty{background:rgba(255,255,255,.84)!important;border-color:#111!important}html[data-theme="contrast"] .gratitude-meter{background:linear-gradient(105deg,#fff,#edf2f0)!important;color:#111!important;border:2px solid #111!important;box-shadow:none!important}html[data-theme="contrast"] .gratitude-meter b,html[data-theme="contrast"] .gratitude-meter small{color:#111!important}
+
+/* Record screen stability: no sideways drift, compact member choices */
+html,body{width:100%;max-width:100%;overflow-x:hidden!important;overscroll-behavior-x:none}
+#app,.screen{max-width:100%;overflow-x:hidden!important}
+.screen:has(#round-form){overflow:visible!important;padding-bottom:calc(var(--bottom) + env(safe-area-inset-bottom) + 24px)!important}
+.screen:has(#round-form) .parchment{max-height:none!important;overflow:visible!important;padding:10px!important}
+.screen:has(#round-form) .form-rules{display:grid!important;gap:7px!important;margin-bottom:6px!important}
+.screen:has(#round-form) .form-rules .rule-card{min-height:60px!important;height:60px!important;padding:6px!important}
+.screen:has(#round-form) .form-rules .rule-card .rule-symbol{display:none!important}
+.screen:has(#round-form) .form-rules .rule-card strong{font-size:16px!important;margin:0!important}
+.screen:has(#round-form) .form-rules .rule-card small{font-size:10px!important}
+.screen:has(#round-form) .admin-record-mode{margin:0 0 7px!important;padding:6px 8px!important}
+.screen:has(#round-form) .admin-record-switch input{appearance:auto!important;position:static!important;opacity:1!important;pointer-events:auto!important;width:17px!important;height:17px!important}
+.screen:has(#round-form) .admin-record-switch b{font-size:12px!important}
+.screen:has(#round-form) .admin-record-switch small{font-size:9px!important}
+.screen:has(#round-form) .recipient-block .participants{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important;width:100%!important}
+.screen:has(#round-form) .recipient-block .person-chip{display:grid!important;grid-template-columns:20px minmax(0,1fr)!important;align-items:center!important;min-width:0!important;min-height:40px!important;height:40px!important;padding:5px 7px!important;font-size:12px!important;line-height:1!important}
+.screen:has(#round-form) .recipient-block .person-chip .chip-mark{width:20px!important;height:20px!important;font-size:11px!important}
+.screen:has(#round-form) .recipient-block .person-chip .chip-name{display:block!important;min-width:0!important;overflow:visible!important;text-overflow:clip!important;white-space:nowrap!important;font-size:12px!important;line-height:1.1!important}
