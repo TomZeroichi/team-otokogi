@@ -133,3 +133,6 @@ html[data-theme="contrast"] .member-remove{border:2px solid #111;background:#fff
 
 /* 管理者による過去戦績入力 */
 .admin-record-mode{margin:2px 0 9px;padding:7px 9px;border:1px solid #8d6032;border-radius:9px;background:linear-gradient(135deg,#332719,#5b3522);color:#fff1cf}.admin-record-switch{display:flex;align-items:center;gap:8px;cursor:pointer}.admin-record-switch input{appearance:auto;position:static;opacity:1;pointer-events:auto;width:18px;height:18px;accent-color:#e3b354;flex:0 0 auto}.admin-record-switch b{display:block;font-size:12px;letter-spacing:.02em}.admin-record-switch small{display:block;margin-top:1px;color:#f7d9a0;font-size:9px;line-height:1.25}.form-rules .rule-card[disabled]{opacity:.58;filter:grayscale(.25)}
+
+/* PWA内のメンバー削除確認 */
+.member-remove.armed{min-width:94px;background:#8d2828;color:#fff8e9;border-color:#5f1717;font-weight:900;animation:delete-pulse .8s ease-in-out infinite alternate}@keyframes delete-pulse{from{filter:brightness(1)}to{filter:brightness(1.18)}}
