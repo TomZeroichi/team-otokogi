@@ -121,3 +121,13 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{
 
 /* Native dropdown legibility on both iOS and Android */
 .inline-select select{appearance:auto;background:#fff9ea;color:#231b14;border:1px solid #b5a083;border-radius:8px;min-height:43px;padding:7px 11px;font-weight:800;width:100%}.inline-select select option{background:#fff9ea;color:#231b14}
+
+
+/* Registration result and admin member management */
+.auth-success{text-align:center}
+.auth-success .success-mark{width:56px;height:56px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(#e5bd69,#a56a24);color:#28180c;font-size:34px;font-weight:900;box-shadow:0 3px 0 #75451e55}
+.auth-success h2{font-size:23px!important;color:#5f241d}
+.auth-success p{color:#4a3825!important;font-size:13px!important;line-height:1.8!important}
+.auth-success .primary-submit{margin-top:18px}
+.member-remove{flex-shrink:0;min-width:48px;padding:7px 9px;border:1px solid #a45c4f;border-radius:8px;background:#fff0e2;color:#8d2828;font-size:11px;font-weight:900}
+html[data-theme="contrast"] .member-remove{border:2px solid #111;background:#fff;color:#900}
