@@ -1,1 +1,1 @@
-'use strict';if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js?v=18',{scope:'./',updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});});}
+'use strict';if('serviceWorker'in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('./sw.js?v=19',{scope:'./',updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{});});}
