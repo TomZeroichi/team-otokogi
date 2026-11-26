@@ -43,6 +43,26 @@ html,body{height:100%;overflow:hidden;background:#05090b}
 html[data-theme="contrast"] .janken-test-picker,html[data-theme="contrast"] .record-janken-method{background:#fff!important;color:#111!important;border:2px solid #111!important}html[data-theme="contrast"] .janken-methods button{background:#fff!important;color:#111!important;border-color:#111!important}html[data-theme="contrast"] .janken-methods button.selected,html[data-theme="contrast"] .save-next-rules{background:#111!important;color:#fff!important}html[data-theme="light"] .janken-test-picker{background:linear-gradient(135deg,#fffaf0,#ead5a1)!important;color:#33210e!important}
 .screen:has(.janken-test-picker),.screen:has(.member-list){overflow-y:auto!important;-webkit-overflow-scrolling:touch}
 
+/* Refined black, gold and vermillion visual system for the test pattern screen.
+   The existing brand mark, wordmark and page structure remain unchanged. */
+html[data-theme="wafu"] #app{background:radial-gradient(circle at 83% 7%,rgba(166,31,26,.34),transparent 23%),radial-gradient(circle at 10% 35%,rgba(202,156,65,.11),transparent 30%),linear-gradient(150deg,#04090c 0%,#091419 48%,#050b0e 100%)!important}
+html[data-theme="wafu"] #app:before{background:radial-gradient(circle at 76% 20%,rgba(190,45,34,.72) 0 9%,rgba(119,19,22,.33) 9.2% 15%,transparent 15.3%),linear-gradient(180deg,transparent 0 48%,rgba(4,9,11,.7) 78%),url('../static/hero.svg') center 8%/132% auto no-repeat,repeating-radial-gradient(ellipse at 50% 116%,transparent 0 20px,rgba(221,171,74,.24) 21px 22px,transparent 23px 40px)!important}
+html[data-theme="wafu"] .app-header{background:linear-gradient(105deg,#03080b 0%,#0a1418 46%,#0b1012 100%)!important;box-shadow:0 2px 15px #0009}
+html[data-theme="wafu"] .app-header:before{content:"";position:absolute;left:0;bottom:0;width:42%;height:1px;background:linear-gradient(90deg,transparent,#dcb15d,transparent);opacity:.8}
+html[data-theme="wafu"] .hero{background:linear-gradient(180deg,rgba(4,9,12,.05),rgba(5,12,15,.45) 64%,#071014 100%),radial-gradient(circle at 72% 29%,rgba(199,43,32,.82) 0 14%,rgba(150,26,27,.35) 14.3% 21%,transparent 21.4%),url('../static/hero.svg') center 24%/cover no-repeat!important}
+html[data-theme="wafu"] .hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:44%;pointer-events:none;background:repeating-radial-gradient(ellipse at 50% 120%,transparent 0 20px,rgba(225,180,82,.27) 21px 22px,transparent 23px 40px);opacity:.68}
+html[data-theme="wafu"] .hero-rule-title{border-color:#e8c26b!important;background:linear-gradient(180deg,#13191be8,#080d0fe8)!important;box-shadow:0 4px 15px #000b,0 0 0 1px #fff0b326 inset}
+html[data-theme="wafu"] .rule-card{background:linear-gradient(145deg,#8a1c27 0%,#55151f 57%,#240d14 100%)!important;border-color:#a8733a!important;box-shadow:inset 0 0 0 2px #ffe1a51c,0 7px 13px #0009!important}
+html[data-theme="wafu"] .rule-card.normal{background:linear-gradient(145deg,#213849 0%,#112331 53%,#071117 100%)!important;border-color:#68747a!important}
+html[data-theme="wafu"] .rule-card.selected{border-color:#ffd16e!important;box-shadow:0 0 0 2px #6d3a20,0 0 18px #dda84552,inset 0 0 0 2px #ffe1a538!important}
+html[data-theme="wafu"] .inscribed{background:linear-gradient(120deg,#0a1215,#111b1e 54%,#071114)!important;border-color:#b58a45!important;box-shadow:inset 0 0 22px #d1a34b0d,0 4px 12px #0008}
+html[data-theme="wafu"] .janken-test-picker{border:1px solid #d0a553!important;background:linear-gradient(135deg,#fff2d1 0%,#f4dfae 56%,#eed29a 100%)!important;box-shadow:0 6px 17px #0009,inset 0 0 0 2px #fff9e366!important}
+html[data-theme="wafu"] .janken-methods button{background:linear-gradient(180deg,#fffaf0,#f3e1b7)!important;border-color:#a67832!important;box-shadow:inset 0 0 0 1px #fff!important}
+html[data-theme="wafu"] .janken-methods button.selected{background:linear-gradient(145deg,#9c2430,#5e111b)!important;color:#fff8e7!important;border-color:#f2c567!important;box-shadow:0 0 0 1px #72211e,0 3px 8px #46101666!important}
+html[data-theme="wafu"] .save-next-rules,.primary-submit{background:linear-gradient(180deg,#b12f39,#75131c 66%,#571016)!important;border:1px solid #e7b85e!important;box-shadow:inset 0 1px 0 #ffe5a766,0 4px 10px #27080b88!important}
+html[data-theme="wafu"] .member-row{background:linear-gradient(115deg,#151f22,#0c1519 62%,#111719)!important;border-color:#a77e43!important;box-shadow:inset 0 0 0 1px #f1c36d14,0 3px 8px #0007!important}
+html[data-theme="wafu"] .favorite-hand-icon{background:radial-gradient(circle at 35% 30%,#fff5c9,#d6a748)!important;border-color:#f0c66c!important;box-shadow:0 2px 5px #0007}
+
 /* iPhone Safari: keep every form editable while the software keyboard is open. */
 input,textarea,[contenteditable="true"]{-webkit-user-select:text!important;user-select:text!important;touch-action:manipulation}
 input,select,textarea{font-size:16px!important;line-height:1.25!important}
