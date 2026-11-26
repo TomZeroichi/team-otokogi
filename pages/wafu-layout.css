@@ -203,3 +203,6 @@ html,body{width:100%;max-width:100%;overflow-x:hidden!important;overscroll-behav
 
 /* 参加メンバーを1画面に収めるための密度調整 */
 .member-list{gap:4px!important}.member-list .member-row{min-height:64px!important;margin-bottom:0!important;padding:5px 8px!important;gap:9px!important}.member-list .portrait.avatar{width:52px!important;height:52px!important;font-size:29px!important;line-height:1!important}.member-list .portrait.avatar img{object-position:center!important}.member-list .member-name{font-size:14px!important}.member-list .member-name small{min-height:15px!important;font-size:9px!important}.member-list .favorite-hand-icon{width:18px!important;height:18px!important;font-size:11px!important;margin-left:4px!important}.member-list .member-remove{min-height:42px!important;padding:6px 10px!important;font-size:12px!important}
+
+/* 管理者の削除操作はカード長押しのみ。通常表示はメンバー一覧と同じ */
+.member-list .member-removable{user-select:none;-webkit-user-select:none;touch-action:manipulation}.member-list .member-removable.deleting{opacity:.58}
