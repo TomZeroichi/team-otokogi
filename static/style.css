@@ -101,7 +101,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{
 .empty{text-align:center;padding:32px 12px;font-size:12px;color:#bca783;line-height:1.8;border:1px dashed #80623c;border-radius:10px}
 .invite-box{border:1px solid #b78b4a;border-radius:12px;padding:17px;background:linear-gradient(145deg,#171c1c,#101519);margin:12px 0 19px}
 .invite-box h3{color:var(--gold);margin:5px 0 8px}.invite-box p{color:#b7ac91;font-size:12px;line-height:1.7}
-.action-button{display:block;background:linear-gradient(#e9bf72,#c89a4d);color:#241c12;border:0;border-radius:12px;font-weight:900;padding:12px 15px;min-height:46px;width:100%;margin-top:10px;text-decoration:none;text-align:center}
+.action-button{display:block;background:linear-gradient(#e9bf72,#c89a4d);color:#241c12;border:0;border-radius:12px;font-weight:900;padding:12px 15px;min-height:46px;width:100%;margin-top:10px;text-decoration:none;text-align:center}.profile-editor #profile-save{position:sticky;bottom:calc(var(--bottom) + env(safe-area-inset-bottom) + 8px);z-index:4;margin:14px 0 12px;box-shadow:0 6px 18px #0006;touch-action:manipulation}.profile-editor #profile-save:disabled{opacity:.78}
 .action-button.secondary{background:transparent;border:1px solid #8b7045;color:#f3d79f}
 .member-row{display:flex;align-items:center;gap:12px;background:#111b1f;border:1px solid #605036;border-radius:10px;margin-bottom:8px;padding:12px}.member-row .member-name{display:flex;flex-direction:column;gap:4px}.member-row small{color:#b4a993;font-size:11px}
 .portrait.avatar{font-size:21px;line-height:1}
