@@ -194,3 +194,6 @@ html,body{width:100%;max-width:100%;overflow-x:hidden!important;overscroll-behav
 
 /* Personal photo avatar */
 .avatar img,.my-avatar img{display:block;width:100%;height:100%;object-fit:cover;border-radius:50%}.photo-input{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}.photo-picker{display:flex!important;align-items:center;justify-content:center;min-height:37px;margin:5px 0 3px;border:1px solid #b98b42;border-radius:9px;background:linear-gradient(135deg,#241d18,#4a2a22);color:#fff0c9!important;font-size:12px!important;font-weight:900!important;box-shadow:inset 0 0 0 1px #f6ce7d22;cursor:pointer}.photo-picker:active{transform:translateY(1px);filter:brightness(1.13)}html[data-theme="light"] .photo-picker{background:linear-gradient(135deg,#7b2b25,#4d1c1c)!important;color:#fff9e6!important}html[data-theme="contrast"] .photo-picker{background:#fff!important;color:#111!important;border:2px solid #111!important}
+
+/* メンバー一覧はカード幅を維持し、写真だけを大きく見せる */
+.member-list .portrait.avatar{width:68px!important;height:68px!important;font-size:36px!important;border-width:2px!important;overflow:hidden!important}.member-list .portrait.avatar img{width:100%!important;height:100%!important;object-fit:cover!important}
