@@ -197,3 +197,6 @@ html,body{width:100%;max-width:100%;overflow-x:hidden!important;overscroll-behav
 
 /* メンバー一覧はカード幅を維持し、写真だけを大きく見せる */
 .member-list .portrait.avatar{width:68px!important;height:68px!important;font-size:36px!important;border-width:2px!important;overflow:hidden!important}.member-list .portrait.avatar img{width:100%!important;height:100%!important;object-fit:cover!important}
+
+/* チーム共有は一覧を優先したコンパクト表示 */
+.invite-box.invite-compact{padding:0!important;margin:2px 0 3px!important;border:0!important;background:transparent!important;box-shadow:none!important}.invite-box.invite-compact .action-button{margin:0!important;min-height:38px!important;padding:8px 10px!important}.screen:has(.member-list) .subheading{margin:4px 0 3px!important;font-size:14px!important}
